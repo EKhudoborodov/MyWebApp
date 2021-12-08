@@ -25,7 +25,7 @@ def login():
         cursor.execute(f"SELECT * FROM service.users WHERE login='<{username}>' AND password='<{password}>'", (str(username), str(password)))
         records = list(cursor.fetchall())
         if records != []:
-            return render_template('account.html', full_name=f"Hello, {records[0][1]}!", login=f"Your login:{username}", passw=f"Your password:{passwordgi}")
+            return render_template('account.html', full_name=f"Hello, {records[0][1]}!", login=f"Your login:{username}", passw=f"Your password:{password}")
         else:
             return render_template('login2.html')
     else:
